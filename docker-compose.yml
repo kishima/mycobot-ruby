@@ -1,0 +1,10 @@
+services:
+  mycobot:
+    build:
+      context: ./services/mycobot
+      dockerfile: Dockerfile
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    volumes:
+      - ./services/mycobot/run_mycobot.py:/app/run_mycobot.py
+    command: python3 /app/run_mycobot.py
